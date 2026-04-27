@@ -1,8 +1,9 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renders Heritage Explorer authentication", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText("Heritage Explorer")).toBeInTheDocument();
+  expect(screen.getByPlaceholderText("Email")).toBeInTheDocument();
+  expect(screen.getByPlaceholderText("Password")).toBeInTheDocument();
 });
