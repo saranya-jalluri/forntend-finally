@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8080/api";
+const API_BASE = (process.env.REACT_APP_API_BASE_URL || "http://localhost:8081/api").replace(/\/$/, "");
 
 export async function api(path, options = {}) {
   const response = await fetch(`${API_BASE}${path}`, {
