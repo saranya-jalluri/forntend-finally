@@ -1,4 +1,4 @@
-export const BACKEND_URL = "https://https://backend-finally.onrender.com/dbcrud";
+export const BACKEND_URL = "https://backend-finally.onrender.com/api";
 
 export function callApi(reqMethod, url, data, responseHandler) {
   let options;

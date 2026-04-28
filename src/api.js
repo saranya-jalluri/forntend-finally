@@ -1,4 +1,12 @@
-const API_BASE = (process.env.REACT_APP_API_BASE_URL || "http://localhost:8081/api").replace(/\/$/, "");
+const localApiBase = "http://localhost:8081/api";
+const productionApiBase = "https://backend-finally.onrender.com/api";
+
+const defaultApiBase =
+  window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+    ? localApiBase
+    : productionApiBase;
+
+const API_BASE = (process.env.REACT_APP_API_BASE_URL || defaultApiBase).replace(/\/$/, "");
 
 export async function api(path, options = {}) {
   const response = await fetch(`${API_BASE}${path}`, {
